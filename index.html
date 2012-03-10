@@ -1,0 +1,74 @@
+
+  <!DOCTYPE html>
+    <html manifest="NutritionApp.manifest">
+
+    <head>
+      <title>Nutrition Wheel</title>
+        <link rel=stylesheet href="http://enyojs.com/enyo-2.0b2/enyo.css">
+        <link rel=stylesheet href="http://enyojs.com/lib/onyx/build/onyx.css">
+        <script src="http://enyojs.com/enyo-2.0b2/enyo.js"></script>
+        <script src="http://enyojs.com/lib/onyx/build/onyx.js"></script>
+        <script src="http://enyojs.com/lib/layout/fittable/package.js"></script>
+        <script src="package.js"></script>
+        <!-- -->
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+            p {
+                padding: 8px;
+                font-size: 1.2em;
+            }
+            .box {
+                border: 2px solid lightblue;
+                padding: 4px;
+            }
+            .b {
+                background-color: #F1FFF1;
+            }
+            .mtb {
+                margin-top: 3px;
+                margin-bottom: 3px;
+            }
+            .mlr {
+                margin-left: 6px;
+                margin-right: 6px;
+            }
+            .o {
+                border-color: orange;
+            }
+            .height {
+                height: 107px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+    <script>
+
+    try {
+      if (window.openDatabase) {
+        db = openDatabase("NutritionDB", "1.0", "Nutrition Database", 200000);
+      if (!db)
+        alert("Failed to open the database on disk.  This is probably because the version "+
+        "was bad or there is not enough space left in this domain's quota");
+      } else
+        alert("Couldn't open the database.  Please try with a WebKit nightly with this feature enabled");
+    } catch(err) {
+      db = null;
+      alert("Couldn't open the database.  Please try with a WebKit nightly with this feature enabled");
+    }
+
+
+
+     var nutritionapp = new NutritionApp();
+     nutritionapp.renderInto(document.body);
+
+     // var playapp = new PlayApp();
+     // playapp.renderInto(document.body);
+    
+    </script>
+    </body>
+
+    </html>

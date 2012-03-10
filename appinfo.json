@@ -1,0 +1,10 @@
+{
+	"id": "com.aegware.nutrition",
+	"version": "0.0.1",
+	"vendor": "AegWare",
+	"type": "web",
+	"main": "index.html",
+	"title": "Nutrition",
+	"icon": "dinner.png",
+	"uiRevision":2
+}
