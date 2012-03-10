@@ -41,25 +41,25 @@ enyo.kind({
           {tag: "br"},
 
           {tag: "br"},
-          {name: "output", classes: "sample-output"},
+          {name: "output", classes: "sample-output box o", content: "test"},
           {kind: "onyx.IconButton", src: "images/larrow.png" }
 
         ] }
     ], // end base components
     extendWorkoutPane: function(inSender, inEvent) {
-        //var color = this.$.workoutpane.hasNode().value;
+        // if the nutrition window is open AND the
+        if (this.$.nutritionpane.value != 100 &&
+            this.$) {
+            this.$.nutritionpane.toggleMinMax();
+        }
         this.$.workoutpane.toggleMinMax();
-        //var dot = this.getComponents();
-        //var list = ["nil"];
-        //for (var a in dot) {list.push(a.toString()); }
-        //this.$.output.setContent(list);
     },
     extendNutritionPane: function(inSender, inEvent) {
-        //var color = this.$.input.hasNode().value;
+        // if the workout pane is open, close it b4 opening nutrition pane
+        /*if (this.workoutpane.value != 0) {
+            this.$.workoutpane.toggleMinMax();
+        }     */
         this.$.nutritionpane.toggleMinMax();
-        //var dot = this.getComponents();
-        //var list = ["nil"];
-        //for (var a in dot) {list.push(a.toString()); }
-        //this.$.output.setContent(list);
+
     }
 });

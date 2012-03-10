@@ -62,7 +62,6 @@ enyo.kind({
             var d = new Date();
             // Note: values less than 1 or greater than the daily month limit automatically wrap to next month.
             d. set_date(dateOffset);
-            this.$.date_display_button.disabled = true;
             this.$.date_display_button.content = d.toLocaleDateString();
             this.$.date_display_button.render();
         },
