@@ -10,6 +10,6 @@ enyo.depends(
     "source/PalmServices.js",
     "source/DbService.js",
     "source/MockService.js",
-    "PlayApp.js",
-	"source/NutritionApp.js"
+	"source/NutritionApp.js",
+    "source/AnimatedToggleButton.js"
 );
